@@ -1,7 +1,7 @@
 .git
 .idea
-projectapp
-projectname
+micro-blogging-prototype
+micro-blogging-prototype
 rango
 db.sqlite3
 manage.py
