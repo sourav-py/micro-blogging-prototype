@@ -36,6 +36,6 @@ def change_password(request):
 
 def change_password_request(request):
 	if request.method == 'POST':
-		form = PasswordChangeForm(request.POST)
+		form = PasswordChangeForm(request.POST,request.user)
 		if form.is_valid():
 			return HttpResponse('.........')

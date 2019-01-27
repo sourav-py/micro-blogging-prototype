@@ -1,9 +1,0 @@
-.git
-.idea
-micro-blogging-prototype
-micro-blogging-prototype
-rango
-db.sqlite3
-manage.py
-populate_rango.py
-requirements.txt
