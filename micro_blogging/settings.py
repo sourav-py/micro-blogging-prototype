@@ -25,7 +25,7 @@ SECRET_KEY = '2y*+u+a_=dqxtnzpfrreu*ze550&*qo0^e5*6!!=3^5y80@o3)'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['sourav2k.pythonanywhere.com']
 
 
 # Application definition
@@ -123,6 +123,7 @@ STATIC_URL = '/static/'
 LOGIN_REDIRECT_URL = '/base/'
 LOGOUT_REDIRECT_URL = '/'
 PASSWORD_CHANGE_REDIRECT_URL = '/base'
+STATIC_ROOT = '/home/sourav2k/micro-blogging-prototype/static'
 
 
 

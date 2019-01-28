@@ -1,21 +1,10 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<style type="text/css">
 
-	.tweet_box {
-		border: 1px solid grey;
-		margin: 3%;
-		padding: 3%;
+{% extends 'head_foot.html' %}
+{% load static %}
+{% block content %}
+<link rel = "stylesheet" type = "text/css" href = "{% static 'tweets/base_style.css' %}" >
 
-	}
-		
 
-	</style>
-	<title></title>
-	
-</head>
-<body>
 	{% csrf_token %}
 	{% if user.is_authenticated %}
 
@@ -37,6 +26,4 @@
 		<p> You are not logged in </p>
 		<a href="/auth_urls/login/">login</a>
 	{% endif %}
-
-</body>
-</html>
+{% endblock %}

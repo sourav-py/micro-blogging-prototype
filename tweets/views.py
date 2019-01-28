@@ -5,7 +5,8 @@ from .models import tweets
 
 # Create your views here.
 
-
+def soon(request):
+	return render(request,'soon.html')
 
 def base0(request):
 	return render(request,'base0.html')
