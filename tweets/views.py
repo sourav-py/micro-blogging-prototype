@@ -1,12 +1,25 @@
 from django.shortcuts import render,HttpResponseRedirect
 from django.http import HttpResponse
-from .forms import TweetsForm
+from .forms import TweetsForm,AskForm
 from .models import tweets
 
 # Create your views here.
 
 def soon(request):
-	return render(request,'soon.html')
+	form = AskForm
+	return render(request,'soon.html',{'form':form})
+
+def ask(request):
+	form = AskForm
+	return render(request,'ask.html',{'form':form})
+
+def ask_submit(request):
+	if request.method == 'POST':
+		form = AskForm(request.POST)
+		if form.is_valid:
+			form.save()
+			message = "thanks for contacting ......I will reply to you soon"
+			return render(request,'soon.html',{'message':message})
 
 def base0(request):
 	return render(request,'base0.html')

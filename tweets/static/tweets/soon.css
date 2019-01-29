@@ -1,16 +1,47 @@
 .text {
 
-	font-size: 120px;
-	
-	
+	font-size: 120px;	
 	text-align: center;
-	color: grey;
+	color: #00EA84;
 	
 }
 
 .main {
-
-	
 	
 	margin-top: 15%;
+}
+
+.link {
+
+	font-size: 30px;
+	color: #00EA84;
+	text-decoration-style: none;
+	
+}
+
+
+
+.p_link {
+
+	
+	text-align: center;
+	border: 2px solid #00EA84;
+	margin: auto 46%;
+	border-radius: 25%;
+}
+a {
+	text-decoration: none !important ;
+}
+
+
+.p_thanks {
+
+	text-align: center;
+	color: #00EA84;
+
+}
+
+.thanks {
+	text-align: center;
+	color: grey;
 }

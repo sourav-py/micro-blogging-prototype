@@ -1,0 +1,30 @@
+{% load static %}
+<link rel = "stylesheet" type = "text/css" href = "{% static 'tweets/ask.css' %}" >
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<div class = "p_form">
+	<form class = "form" method="post" action = "{% url 'tweets:ask_submit' %}">
+	{% csrf_token %}
+	<p>
+	<label for="id_name">Name</label>
+	<input type="text" name="name" maxlength="100" required="" id="id_name">
+	</p><p>
+	<label for="id_email">Email</label>
+	<input type="email" name="email" maxlength="254" required="" id="id_email">
+	<p></p>
+	<label for="id_question">Question</label>
+	<textarea name="question" cols="40" rows="10" required="" id="id_question"></textarea>
+	</p>
+	<button type = "submit">submit</button>
+
+    </form>
+</div>
+</body>
+</html>
+
+
