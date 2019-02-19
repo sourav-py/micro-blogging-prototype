@@ -25,7 +25,7 @@ SECRET_KEY = '2y*+u+a_=dqxtnzpfrreu*ze550&*qo0^e5*6!!=3^5y80@o3)'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['sourav2k.pythonanywhere.com']
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -39,6 +39,10 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'tweets',
     'accounts',
+    'social_django',
+    
+    'social.apps.django_app.default',
+
 ]
 
 MIDDLEWARE = [
@@ -49,6 +53,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'social_django.middleware.SocialAuthExceptionMiddleware',
+
 ]
 
 ROOT_URLCONF = 'micro_blogging.urls'
@@ -63,6 +69,8 @@ TEMPLATES = [
                 'django.template.context_processors.debug',
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
+                'social_django.context_processors.backends',
+                'social_django.context_processors.login_redirect',
                 'django.contrib.messages.context_processors.messages',
             ],
         },
@@ -102,6 +110,16 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 
+AUTHENTICATION_BACKENDS = (
+    'social.backends.facebook.FacebookOAuth2',
+    'social.backends.google.GoogleOpenId',
+    'social.backends.google.GoogleOAuth2',
+    'social.backends.google.GoogleOAuth',
+    'social.backends.twitter.TwitterOAuth',
+    'django.contrib.auth.backends.ModelBackend',
+)
+
+
 # Internationalization
 # https://docs.djangoproject.com/en/2.1/topics/i18n/
 
@@ -120,10 +138,13 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
 STATIC_URL = '/static/'
-LOGIN_REDIRECT_URL = '/base/'
+LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/'
-PASSWORD_CHANGE_REDIRECT_URL = '/base'
-STATIC_ROOT = '/home/sourav2k/micro-blogging-prototype/static'
+PASSWORD_CHANGE_REDIRECT_URL = '/'
 
-
-
+#facebook
+SOCIAL_AUTH_FACEBOOK_KEY = ' 841172282887070'
+SOCIAL_AUTH_FACEBOOK_SECRET = 'ac70070b2c441e1d3cbd3f5eb721faef'
+#google
+SOCIAL_AUTH_GOOGLE_OATH2_KEY = '741388964104-ff331b19d9r6o9el31uikp58h8d0jthv.apps.googleusercontent.com '
+SOCIAL_AUTH_GOOGLE_OATH2_SECRET = '9qBX9Jy3HZukaW4kIKwjzVoJ '
