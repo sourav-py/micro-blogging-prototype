@@ -2,28 +2,29 @@
 {% extends 'head_foot.html' %}
 {% load static %}
 {% block content %}
-<link rel = "stylesheet" type = "text/css" href = "{% static 'tweets/base_style.css' %}" >
+<link rel = "stylesheet" type = "text/css" href = "{% static 'tweets/base.css' %}" >
 
 
 	{% csrf_token %}
-	{% if user.is_authenticated %}
 
-		<h2> welcome {{ user.get_username }}</h2>
-		<a href="{% url 'tweets:new_tweet' %} ">tweet</a>
-		<a href = "/auth_urls/logout" >logout</a>
-		<a href = "{% url 'accounts:profile' %}">profile</a>
-
-		{% for model in models %}
-		<div class="tweet_box">
-			<p>{{ model.author }}</p>
-			<p>{{ model.date_time }}</p>
-			<p>{{ model.body }}</p>
+	<div class="master">
+		<div class="user">
+			<h2> welcome {{ user.get_username }}</h2>
+			<a href="{% url 'tweets:new_tweet' %} ">tweet</a>
+			<a href = "/auth_urls/logout" >logout</a>
+			<a href = "{% url 'accounts:profile' %}">profile</a>
 		</div>
-		{% endfor %}
+		<div class="tweets_hower">
+			{% for model in models %}
+			<div class="tweet_box">
+				<p id = "user_name">{{ model.author }}</p>
+				<p id = "pub_date">{{ model.date_time }}</p>
+				<p>{{ model.body }}</p>
+			</div>
+			{% endfor %}
+		</div></div>
+	
 
 
-	{% else %}
-		<p> You are not logged in </p>
-		<a href="/auth_urls/login/">login</a>
-	{% endif %}
+	
 {% endblock %}

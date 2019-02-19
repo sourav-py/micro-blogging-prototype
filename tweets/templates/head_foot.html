@@ -6,12 +6,33 @@
 <head>
 	<link  rel = "stylesheet" type = "text/css" href = "{% static 'tweets/head_foot.css' %}" >
 	<title></title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
-	<div class= "head_name"><h1>micro blogging</h1></div>
+	<div class = "top_box">
+		<div class= "logo_name"><h1><span id = "micro">micro</span> BLOGGING</h1></div>
+		<nav>
+			<ul>
+				<li>home</li>
+				<li>about</li>
+				<li>contact</li>
+
+			</ul>
+
+		</nav>
+
+
+
+	</div>
+	
 	{% block content %}
 	{% endblock %}
-	<div><h2>footer</h2></div>
+
+
+	<div class="foot_box">
+
+
+	</div>
 
 </body>
 </html>

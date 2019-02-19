@@ -1,15 +1,35 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title></title>
-</head>
-<body>
-	<form  method="post">
-		{% csrf_token %}
+{% extends 'head_foot.html' %}
+{% load static %}
+{% block content %}
 
-		{{ form.as_p }}
-		<input type = "submit" name="login"/>
+<link rel = "stylesheet" type="text/css" href = "{% static 'accounts/login.css' %}">
+<body>
+	<form method="post" class="login_form">
+		<div class="login_logo"><h1><span id = "log">log</span>in</h1></div>
+		<div class="mini_form">
+			{% csrf_token %}
+			<div class="creds">
+				<p>
+				<label for="id_username">username</label>
+				</p>
+				<p>
+				<input class="input" type="text" name="username" autofocus="" required="" id="id_username">
+	    		</p>
+	    	</div>
+	    	<div class="creds">
+	    		<p>
+				<label for="id_password">password</label>
+				</p>
+				<p>
+				<input class = "input"  type="password" name="password" required="" id="id_password">
+				</p>
+			</div>	
+			<button class="login_button" type = "submit">login</button>
+		</div>
+		<div class = "facebook"><a href =  "{% url 'social:begin' 'facebook' %}">facebook</a></div>
+		<div class="google"><a href="{% url 'social:begin' 'facebook' %}">google</a></div>
 	</form>
 
+	
 </body>
-</html>
+{% endblock %}

@@ -1,4 +1,49 @@
-p {
+.top_box {
 
-	font-size: 50px;
+	min-height: 70px;
+    background-color: grey;
+    border-bottom: 4px solid orange;
+    border-radius: 25px; 
+
 }
+
+body {
+	background-color: white;
+}
+
+#micro {
+
+		color: orange;
+
+}
+
+.top_box ul {
+
+	padding: 0;
+	margin: 0;
+
+}
+
+.top_box li {
+
+	float: left;
+	display: inline;
+	padding: 0 20px 0 20px;
+	color: white;
+	font: Sans-Serif;
+	font-size: 1.2em;
+}
+
+.top_box .logo_name {
+	float: left;
+	color: white;
+	margin-left: 25px;
+
+}
+
+.top_box nav {
+	float: right;
+	margin-top: 20px;
+	margin-right: 25px;
+}
+

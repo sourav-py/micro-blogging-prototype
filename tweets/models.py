@@ -1,6 +1,8 @@
 from django.db import models
 from django.contrib.auth.models import User
 from datetime import datetime
+from django.conf import settings
+
 
 # Create your models here.
 
@@ -12,7 +14,8 @@ class tweets(models.Model):
 				return user.get_username
 	z = curr_user()
 	k = datetime.now
-	author = models.CharField(max_length = 50,default=z)
+	
+	author = models.CharField(User,max_length = 30)
 	date_time = models.DateTimeField(default = k)
 	body = models.TextField()
 
@@ -22,13 +25,4 @@ class tweets(models.Model):
 		return self.body
 
 
-class Ask(models.Model):
-
-	name = models.CharField(max_length=100)
-	email = models.EmailField()
-	question = models.TextField()
-
-
-	def __str__(self):
-
-		return self.name
+	

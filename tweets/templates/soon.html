@@ -1,5 +1,5 @@
 {% load static %}
-<link rel = "stylesheet" type = "text/css" href = "{% static 'tweets/soon.css' %}" >
+<link rel= "stylesheet" type = "css/text" href = "{% static url 'tweets/soon.css' %}" >
 
 <!DOCTYPE html>
 <html>
@@ -7,10 +7,8 @@
 	<title></title>
 </head>
 <body>
-	<p class="p_thanks"><h2 class="thanks">{{ message }}</h2><p>
 
-	<div class="main"><p class="text">coming soon</p></div>
-	<p class = "p_link"><a class="link" href="{% url 'tweets:ask' %}">Contact</a></p>
+	<p>coming soon</p>
 
 </body>
 </html>

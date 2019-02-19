@@ -19,8 +19,9 @@ import tweets
 import accounts
 
 urlpatterns = [
-    #path('admin/', admin.site.urls),
+    path('admin/', admin.site.urls),
     path('',include(('tweets.urls','tweets'),namespace = 'tweets')),
-    #path('accounts/',include(('accounts.urls','accounts'),namespace='accounts')),
-    #path('auth_urls/',include('django.contrib.auth.urls')),
+    path('accounts/',include(('accounts.urls','accounts'),namespace='accounts')),
+    path('auth_urls/',include('django.contrib.auth.urls')),
+    path('social_auth',include(('social.apps.django_app.urls','social'),namespace = 'social'))
 ]
